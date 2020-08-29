@@ -7,13 +7,15 @@ $ npm install --save moist-modal
 
 ## Usage
 ```
-	import React from 'react';
+	import React, { useState } from 'react';
 	import MoistModal from 'moist-modal';
 
 	function MyApp() {
+		const [open, setOpen] = useState(true)
+
 		return (
 			<div>
-				<MoistModal />
+				<MoistModal IsOpen={open} Close={() => setOpen(false)}/>
 			</div>
 		)
 	}
@@ -22,8 +24,11 @@ $ npm install --save moist-modal
 
 1. Props
 	```
-	modalOpenButton: {Open Button value}
-	modalHeader: {Modal title}
-	modalContent: {Modal body content}
-	modalCloseButton: {Close button value}
+	IsOpen: {Boolean}
+	Header: {Modal title}
+	Content: {Modal body content}
+	CloseButton: {Close button value}
+	StylingOverlay: {style for modal overlay}
+	Styling: {Style for modal popup}
+	
 	```
